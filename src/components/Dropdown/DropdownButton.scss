@@ -1,0 +1,37 @@
+@import '../../variables.scss';
+
+.DropdownButton {
+    display: inline-flex;
+
+    &--open,
+    &:hover {
+        .DropdownButton__arrow svg {
+            fill: #fff;
+            transform: rotate(-90deg);
+        }
+
+        .DropdownButton__text {
+            color: #fff;
+        }
+    }
+
+    &--closed {
+        .DropdownButton__arrow svg {
+            fill: $light-grey;
+            transform: rotate(90deg);
+        }
+
+        .DropdownButton__text {
+            color: $light-grey;
+        }
+    }
+
+    &__arrow {
+        margin-left: 10px;
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}

@@ -3,6 +3,7 @@ import {
   Header,
   HeaderItem,
   Logo,
+  HeaderDropdown,
 } from './components/Header';
 import headerItems from './content/headerItems';
 
@@ -33,6 +34,7 @@ class App extends Component {
               key={item.id} 
             />
           ))}
+          <HeaderDropdown selected={this.state.view} />
         </Header>
       </div>
     );
