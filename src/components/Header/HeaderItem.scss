@@ -1,0 +1,14 @@
+@import "../../variables.scss";
+
+.HeaderItem {
+    display: inline-block;
+    line-height: 80px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: $light-grey;
+
+    &--highlight,
+    &:hover {
+        color: #fff;
+    }
+}

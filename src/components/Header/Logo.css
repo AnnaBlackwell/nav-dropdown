@@ -1,0 +1,9 @@
+.Logo {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    float: left;
+    height: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
