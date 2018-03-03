@@ -23,5 +23,5 @@ if (process.env.NODE_ENV !== 'production') {
         }).isRequired,
     }
 }
-
+   
 export default HeaderItem;
