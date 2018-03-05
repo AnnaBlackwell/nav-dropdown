@@ -3,6 +3,11 @@
 .DropdownButton {
     display: inline-flex;
 
+
+    @media (max-width: $screen-small) {
+        font-size: 12px;
+    }
+
     &--open,
     &:hover {
         .DropdownButton__arrow svg {

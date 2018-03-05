@@ -1,0 +1,12 @@
+@import '../../variables.scss';
+
+.HeaderDropdown {
+    position: absolute;
+    right: 20px;
+    top: 29px;
+    cursor: pointer;
+
+    @media (max-width: $screen-small) {
+        top: 18px;
+    }
+}

@@ -3,4 +3,8 @@
 .Header {
     background-color: $dark-grey;
     height: 80px;
+
+    @media (max-width: $screen-small) {
+        height: 60px;
+    }
 }

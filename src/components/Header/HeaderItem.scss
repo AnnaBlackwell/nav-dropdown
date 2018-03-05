@@ -11,4 +11,11 @@
     &:hover {
         color: #fff;
     }
+
+    @media (max-width: $screen-small) {
+        font-size: 12px;
+        margin-left: 5px;
+        margin-right: 5px;
+        line-height: 60px;
+    }
 }
