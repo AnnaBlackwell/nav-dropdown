@@ -1,0 +1,10 @@
+@import '../../variables.scss';
+
+.DropdownOptions {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 10px);
+    border-radius: 3px;
+    background-color: #fff;
+    padding: 10px;
+}

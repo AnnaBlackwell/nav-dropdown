@@ -1,0 +1,14 @@
+@import '../../variables.scss';
+
+.DropdownOption {
+    display: block;
+    padding: 8px;
+    border-radius: 3px;
+    color: $mid-grey;
+    font-size: 14px;
+
+    &:hover {
+        background-color: #f9f9f9;
+        color: $dark-grey;
+    }
+}

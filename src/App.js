@@ -9,13 +9,12 @@ import headerItems from './content/headerItems';
 
 class App extends Component {
   state = {
-    view: 'teacher',
+    selected: 'teacher@school.org',
   };
 
   getHeaderItems = () => {
-    const {view} = this.state;
     return headerItems.filter((item) => {
-      if (view === 'teacher') {
+      if (this.state.selected === 'teacher@school.org') {
         return item.teacherView;
       } else {
         return item.studentView;
@@ -23,7 +22,23 @@ class App extends Component {
     });
   }
 
+  onSelect = (selected) => {
+    this.setState({selected});
+  }
+
   render() {
+    const options = [
+        {value: "student@school.org"},
+        {value: "teacher@school.org"},
+        {
+            value: "Settings",
+            url: "/settings",
+        },
+        {
+            value: "Sign Out",
+            url: "/sign-out",
+        },
+    ];
     return (
       <div>
         <Header>
@@ -34,7 +49,11 @@ class App extends Component {
               key={item.id} 
             />
           ))}
-          <HeaderDropdown selected={this.state.view} />
+          <HeaderDropdown 
+            selected={this.state.selected} 
+            options={options} 
+            onSelect={this.onSelect} 
+          />
         </Header>
       </div>
     );

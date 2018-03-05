@@ -7,11 +7,16 @@
     &:hover {
         .DropdownButton__arrow svg {
             fill: #fff;
-            transform: rotate(-90deg);
         }
 
         .DropdownButton__text {
             color: #fff;
+        }
+    }
+
+    &--open {
+        .DropdownButton__arrow svg {
+            transform: rotate(-90deg);
         }
     }
 
