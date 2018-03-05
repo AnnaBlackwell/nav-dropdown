@@ -1,56 +1,52 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import './HeaderDropdown.scss';
+import './HeaderDropdown.css';
 import {
-    Dropdown,
-    DropdownOptions,
-    DropdownOption,
+  Dropdown,
+  DropdownOptions,
+  DropdownOption,
 } from '../Dropdown';
 
 class HeaderDropdown extends Component {
-    render() {
-        const {
-            options,
-            onSelect,
-            selected,
-        } = this.props;
-        return (
-            <div className="HeaderDropdown">
-                <Dropdown 
-                    buttonValue={selected}
-                    content={(
-                        <DropdownOptions>
-                            {options.map((option) => {
-                                if (option.value !== selected) {
-                                    return (
-                                        <DropdownOption 
-                                            option={option}
-                                            onClick={() => onSelect(option.value)}
-                                            key={option.value}
-                                        />
-                                    )
-                                }
-                            })}
-                        </DropdownOptions>
-                    )}
+  render() {
+    const {
+      options,
+      onSelect,
+      selected,
+    } = this.props;
+    return (
+      <div className="HeaderDropdown">
+        <Dropdown 
+          buttonValue={selected}
+          content={(
+            <DropdownOptions>
+              {options.map((option) => option.value !== selected && (
+                <DropdownOption 
+                  option={option}
+                  onClick={() => onSelect(option.value)}
+                  key={option.value}
                 />
-            </div>
-        );
-    }
+              ))}
+            </DropdownOptions>
+          )}
+        />
+      </div>
+    );
+  }
 }
 
 if (process.env.NODE_ENV !== 'production') {
-    HeaderDropdown.propTypes = {
-        onSelect: PropTypes.func.isRequired,
-        options: PropTypes.arrayOf(PropTypes.shape({
-            value: PropTypes.string,
-            url: PropTypes.string,
-        })).isRequired,
-        selected: PropTypes.oneOf([
-            'teacher', 
-            'student',
-        ]),
-    }
+  HeaderDropdown.propTypes = {
+    onSelect: PropTypes.func.isRequired,
+    options: PropTypes.arrayOf(PropTypes.shape({
+      value: PropTypes.string,
+      url: PropTypes.string,
+    })).isRequired,
+    selected: PropTypes.oneOf([
+      'teacher@school.org', 
+      'student@school.org',
+    ]),
+  }
 }
 
 export default HeaderDropdown;

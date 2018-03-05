@@ -1,10 +1,10 @@
 import React from 'react';
-import './DropdownOptions.scss';
+import './DropdownOptions.css';
 
 const DropdownOptions = ({children}) => (
-    <div className="DropdownOptions">
-        {children}
-    </div>
+  <div className="DropdownOptions">
+    {children}
+  </div>
 );
 
 export default DropdownOptions;

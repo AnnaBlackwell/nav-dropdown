@@ -4,8 +4,8 @@ import DropdownOptions from './DropdownOptions';
 import DropdownOption from './DropdownOption';
 
 export {
-    DropdownButton,
-    Dropdown,
-    DropdownOptions,
-    DropdownOption,
+  DropdownButton,
+  Dropdown,
+  DropdownOptions,
+  DropdownOption,
 };

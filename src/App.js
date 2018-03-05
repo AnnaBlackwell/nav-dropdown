@@ -13,13 +13,8 @@ class App extends Component {
   };
 
   getHeaderItems = () => {
-    return headerItems.filter((item) => {
-      if (this.state.selected === 'teacher@school.org') {
-        return item.teacherView;
-      } else {
-        return item.studentView;
-      }
-    });
+    const {selected} = this.state;
+    return headerItems.filter((item) => selected === 'teacher@school.org' ? item.teacherView : item.studentView);
   }
 
   onSelect = (selected) => {
@@ -28,34 +23,32 @@ class App extends Component {
 
   render() {
     const options = [
-        {value: "student@school.org"},
-        {value: "teacher@school.org"},
-        {
-            value: "Settings",
-            url: "/settings",
-        },
-        {
-            value: "Sign Out",
-            url: "/sign-out",
-        },
+      {value: "student@school.org"},
+      {value: "teacher@school.org"},
+      {
+        value: "Settings",
+        url: "/settings",
+      },
+      {
+        value: "Sign Out",
+        url: "/sign-out",
+      },
     ];
     return (
-      <div>
-        <Header>
-          <Logo />
-          {this.getHeaderItems().map((item) => (
-            <HeaderItem 
-              item={item} 
-              key={item.id} 
-            />
-          ))}
-          <HeaderDropdown 
-            selected={this.state.selected} 
-            options={options} 
-            onSelect={this.onSelect} 
+      <Header>
+        <Logo />
+        {this.getHeaderItems().map((item) => (
+          <HeaderItem 
+            item={item} 
+            key={item.value} 
           />
-        </Header>
-      </div>
+        ))}
+        <HeaderDropdown 
+          selected={this.state.selected} 
+          options={options} 
+          onSelect={this.onSelect} 
+        />
+      </Header>
     );
   }
 }
